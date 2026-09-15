@@ -81,6 +81,7 @@ Response
   │
   ▼
 Dashboard / Reports
+##📂 Project Structure
 SpringEdu/
 │
 ├── frontend/
