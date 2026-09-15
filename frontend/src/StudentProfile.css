@@ -1,0 +1,35 @@
+.student-profile-container {
+  padding: 20px;
+}
+
+.student-profile-card {
+  display: flex;
+  gap: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.profile-image img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.profile-details p {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  .student-profile-card {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 16px !important;
+    padding: 16px !important;
+  }
+  .profile-image img {
+    width: 120px !important;
+  }
+}

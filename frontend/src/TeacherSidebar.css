@@ -1,0 +1,287 @@
+.teacher-sidebar {
+  width: 200px;
+  background: #f4f3ff;
+  padding: 44px 12px 24px;
+  flex-shrink: 0;
+  box-shadow: inset -1px 0 0 rgba(81, 73, 189, 0.12);
+}
+
+.teacher-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.teacher-sidebar li {
+  margin: 0 0 18px;
+}
+
+.teacher-sidebar a {
+  position: relative;
+  display: block;
+  padding: 13px 14px 13px 48px;
+  color: #2f2a71;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teacher-sidebar a::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(81, 73, 189, 0.35);
+  transform: translateY(-50%) scale(0.85);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.teacher-sidebar a:hover {
+  color: #2f2a71;
+  text-decoration: none;
+}
+
+.teacher-sidebar a.active {
+  color: #5149bd;
+  text-decoration: none;
+}
+
+.teacher-sidebar a.active {
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(81, 73, 189, 0.14);
+}
+
+.teacher-sidebar a.active::before {
+  background: #5149bd;
+}
+
+.teacher-sidebar a.active::before {
+  transform: translateY(-50%) scale(1.2);
+}
+
+@media (max-width: 720px) {
+  .teacher-sidebar {
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .teacher-sidebar ul {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+
+  .teacher-sidebar li {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  .teacher-sidebar a {
+    padding: 11px 14px;
+    white-space: nowrap;
+  }
+
+  .teacher-sidebar a::before {
+    display: none;
+  }
+}
+
+/* Collapse teacher sidebar on tablet and below */
+@media (max-width: 991px) {
+  .teacher-container {
+    flex-direction: column;
+  }
+  .teacher-sidebar {
+    width: 100%;
+    padding: 16px 0;
+  }
+  .teacher-sidebar ul {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+  .teacher-sidebar li {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  .teacher-sidebar a {
+    padding: 11px 14px;
+    white-space: nowrap;
+  }
+  .teacher-sidebar a::before {
+    display: none;
+  }
+}
+
+/* Mobile Layout (<768px) */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .teacher-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 60px !important;
+    padding: 10px 16px !important;
+    z-index: 1000 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .teacher-navbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: none !important;
+    gap: 0 !important;
+  }
+
+  .teacher-container {
+    margin-top: 60px !important;
+    min-height: calc(100vh - 60px) !important;
+    flex-direction: row !important; /* Restore row layout for mobile drawer overlay context */
+  }
+
+  .teacher-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    z-index: 2000 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: #f4f3ff !important;
+    display: block !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+    padding: 0 !important;
+  }
+
+  body.sidebar-open .teacher-sidebar {
+    transform: translateX(0) !important;
+  }
+
+  .teacher-sidebar ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 24px 16px !important;
+    overflow-x: visible !important;
+  }
+
+  .teacher-sidebar li {
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .teacher-sidebar a {
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .teacher-sidebar a::before {
+    display: inline-block !important;
+  }
+}
+
+/* Sidebar footer is hidden by default */
+.teacher-sidebar .sidebar-footer {
+  display: none;
+}
+
+/* Force vertical layout on Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .teacher-container {
+    flex-direction: row !important;
+  }
+  .teacher-sidebar {
+    width: 220px !important;
+    height: auto !important;
+    position: static !important;
+    display: block !important;
+    padding: 44px 12px 24px !important;
+    box-shadow: inset -1px 0 0 rgba(81, 73, 189, 0.12) !important;
+    transform: none !important;
+  }
+  .teacher-sidebar ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    overflow-x: visible !important;
+  }
+  .teacher-sidebar li {
+    margin: 0 0 18px !important;
+    flex: 0 0 auto !important;
+  }
+  .teacher-sidebar a {
+    padding: 13px 14px 13px 48px !important;
+    white-space: normal !important;
+  }
+  .teacher-sidebar a::before {
+    display: block !important;
+  }
+}
+
+/* Mobile Logout Footer styling for Teacher Sidebar Drawer */
+@media (max-width: 767px) {
+  .teacher-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding-bottom: 24px !important;
+    overflow-y: auto !important;
+  }
+  .teacher-sidebar .sidebar-footer {
+    display: block !important;
+    margin-top: auto !important;
+    padding-top: 16px !important;
+    border-top: 1px solid rgba(81, 73, 189, 0.12) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .teacher-sidebar .sidebar-logout-btn {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #2f2a71 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    gap: 12px !important;
+    border-radius: 8px !important;
+    text-align: left !important;
+    transition: all 0.2s ease !important;
+  }
+  .teacher-sidebar .sidebar-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.08) !important;
+    color: #ef4444 !important;
+  }
+}
+

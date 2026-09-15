@@ -1,0 +1,98 @@
+
+.add-student-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.add-student-title {
+    text-align: center;
+    color: #3f51b5;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.add-student-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px 12px;
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: none;
+    height: 80px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 6px rgba(63,81,181,0.3);
+}
+
+
+.full-width {
+    grid-column: span 2;
+}
+
+.submit-btn {
+    grid-column: span 2;
+    padding: 14px;
+    background: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #2f3f9d;
+}
+
+@media (max-width: 767px) {
+  .add-student-form {
+    grid-template-columns: 1fr !important;
+  }
+  .full-width {
+    grid-column: span 1 !important;
+  }
+  .submit-btn {
+    grid-column: span 1 !important;
+    min-height: 44px !important;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    min-height: 44px !important;
+  }
+}

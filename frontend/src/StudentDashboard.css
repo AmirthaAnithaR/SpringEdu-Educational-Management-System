@@ -1,0 +1,445 @@
+.student-navbar {
+  background: #5149bd;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.student-navbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.student-navbar .nav-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  background: #ffffff;
+  border-radius: 6px;
+  border: 0;
+  box-shadow: none;
+}
+
+.student-navbar h1 {
+  margin: 0;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.student-navbar .delete-btn {
+  background: #e70d3d;
+  color: #ffffff;
+  border: 0;
+  border-radius: 6px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.student-navbar .delete-btn:hover {
+  background: #c90b35;
+  color: #ffffff;
+}
+
+.student-dashboard-container {
+  display: flex;
+  min-height: calc(100vh - 76px);
+  background: #ffffff;
+}
+
+.student-sidebar {
+  width: 200px;
+  background: #f4f3ff;
+  padding: 44px 12px 24px;
+  flex-shrink: 0;
+  box-shadow: inset -1px 0 0 rgba(81, 73, 189, 0.12);
+}
+
+.student-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.student-sidebar li {
+  margin: 0 0 18px;
+  padding: 0;
+  background: transparent;
+}
+
+.student-sidebar a {
+  position: relative;
+  display: block;
+  padding: 13px 14px 13px 48px;
+  color: #2f2a71;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-sidebar a::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(81, 73, 189, 0.35);
+  transform: translateY(-50%) scale(0.85);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.student-sidebar a:hover {
+  color: #2f2a71;
+  text-decoration: none;
+}
+
+.student-sidebar a.active {
+  color: #5149bd;
+  text-decoration: none;
+}
+
+.student-sidebar a.active {
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(81, 73, 189, 0.14);
+}
+
+.student-sidebar a.active::before {
+  background: #5149bd;
+}
+
+.student-sidebar a.active::before {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.student-main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 22px 20px;
+  background: #ffffff;
+}
+
+@media (max-width: 720px) {
+  .student-navbar {
+    padding: 14px;
+  }
+
+  .student-navbar h1 {
+    font-size: 22px;
+  }
+
+  .student-dashboard-container {
+    flex-direction: column;
+  }
+
+  .student-sidebar {
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .student-sidebar ul {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+
+  .student-sidebar li {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  .student-sidebar a {
+    padding: 11px 14px;
+    white-space: nowrap;
+  }
+
+  .student-sidebar a::before {
+    display: none;
+  }
+}
+
+/* Collapse student sidebar on tablet and below */
+@media (max-width: 991px) {
+  .student-dashboard-container {
+    flex-direction: column;
+  }
+  .student-sidebar {
+    width: 100%;
+    padding: 16px 0;
+  }
+  .student-sidebar ul {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+  .student-sidebar li {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  .student-sidebar a {
+    padding: 11px 14px;
+    white-space: nowrap;
+  }
+  .student-sidebar a::before {
+    display: none;
+  }
+}
+/* Mobile Layout (<768px) */
+@media (max-width: 767px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .student-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 60px !important;
+    padding: 10px 16px !important;
+    z-index: 1000 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .student-navbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: none !important;
+    gap: 0 !important;
+  }
+
+  .student-dashboard-container {
+    margin-top: 60px !important;
+    min-height: calc(100vh - 60px) !important;
+    flex-direction: row !important; /* Restore row layout for mobile drawer overlay context */
+  }
+
+  .student-sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    z-index: 2000 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border: 0 !important;
+    background: #f4f3ff !important;
+    display: block !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+    padding: 0 !important;
+  }
+
+  body.sidebar-open .student-sidebar {
+    transform: translateX(0) !important;
+  }
+
+  .student-sidebar ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 24px 16px !important;
+    overflow-x: visible !important;
+  }
+
+  .student-sidebar li {
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+  }
+
+  .student-sidebar a {
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .student-sidebar a::before {
+    display: inline-block !important;
+  }
+}
+
+/* ==========================================================================
+   Student-Specific Responsive Styles
+   ========================================================================== */
+.student-navbar .profile-icon-btn {
+  display: flex !important;
+}
+
+.student-navbar .notification-bell-btn {
+  display: flex;
+  background: none;
+  border: 0;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.student-sidebar .sidebar-footer {
+  display: none;
+}
+
+/* Force vertical layout on Tablet (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .student-dashboard-container {
+    flex-direction: row !important;
+  }
+  .student-sidebar {
+    width: 220px !important;
+    height: auto !important;
+    position: static !important;
+    display: block !important;
+    padding: 44px 12px 24px !important;
+    box-shadow: inset -1px 0 0 rgba(81, 73, 189, 0.12) !important;
+    transform: none !important;
+  }
+  .student-sidebar ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 0 !important;
+    overflow-x: visible !important;
+  }
+  .student-sidebar li {
+    margin: 0 0 18px !important;
+    flex: 0 0 auto !important;
+  }
+  .student-sidebar a {
+    padding: 13px 14px 13px 48px !important;
+    white-space: normal !important;
+  }
+  .student-sidebar a::before {
+    display: block !important;
+  }
+  .student-navbar .navbar-right-actions {
+    gap: 16px !important;
+  }
+}
+
+/* Mobile Logout Footer styling for Student Sidebar Drawer */
+@media (max-width: 767px) {
+  .student-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding-bottom: 24px !important;
+    overflow-y: auto !important;
+  }
+  .student-sidebar .sidebar-footer {
+    display: block !important;
+    margin-top: auto !important;
+    padding-top: 16px !important;
+    border-top: 1px solid rgba(81, 73, 189, 0.12) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .student-sidebar .sidebar-logout-btn {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #2f2a71 !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    padding: 12px 16px !important;
+    gap: 12px !important;
+    border-radius: 8px !important;
+    text-align: left !important;
+    transition: all 0.2s ease !important;
+  }
+  .student-sidebar .sidebar-logout-btn:hover {
+    background: rgba(239, 68, 68, 0.08) !important;
+    color: #ef4444 !important;
+  }
+  
+  /* Mobile Student Navbar alignment */
+  .student-navbar-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+  .student-navbar .hamburger-btn {
+    order: 1 !important;
+    margin: 0 !important;
+  }
+  .student-navbar .navbar-brand {
+    order: 2 !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .student-navbar .nav-logo {
+    display: none !important;
+  }
+  .student-navbar .navbar-title {
+    display: block !important;
+    font-size: 18px !important;
+    color: #ffffff !important;
+    margin: 0 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  .student-navbar .navbar-right-actions {
+    order: 3 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+  .student-navbar .notification-bell-btn {
+    margin-right: 0 !important;
+  }
+}
+
+/* Card layout constraints for Student Stat Grid */
+@media (min-width: 1200px) {
+  .student-stat-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .student-stat-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .student-stat-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+
